@@ -1,0 +1,917 @@
+:root {
+  --bg-dark: #020617;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #2e1065, #020617 60%);
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #6366f1; /* Indigo */
+  --accent-glow: rgba(99, 102, 241, 0.3);
+  --success: #22c55e;
+  --font-main: 'Inter', sans-serif;
+}
+
+/* Global Reset & Base */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-main); }
+
+body {
+  background: var(--bg-dark); /* Fallback */
+  background-image: var(--bg-gradient);
+  background-attachment: fixed; /* Keeps gradient in place while scrolling */
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================= LAYOUT GRID ================= */
+.page-container {
+  display: grid;
+  /* Left Sidebar (260px) | Main Content (Flexible) | Right Sidebar (280px) */
+  grid-template-columns: 260px 1fr 280px; 
+  gap: 32px;
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 0 24px;
+  align-items: start;
+}
+
+/* ================= LEFT SIDEBAR (Profile Info) ================= */
+.left-sidebar {
+  position: sticky;
+  top: 90px; /* Adjust based on navbar height */
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.status-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #8b5cf6;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #0f172a;
+  font-size: 14px;
+}
+
+.profile-name-large { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+.profile-role { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; }
+
+.profile-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.meta-row svg { width: 16px; opacity: 0.7; }
+.meta-row a { color: var(--text-muted); text-decoration: none; transition: 0.2s; }
+.meta-row a:hover { color: var(--accent); }
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+.btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* ================= CENTER COLUMN (Main Feed) ================= */
+.main-content {
+  min-width: 0; /* Prevents flexbox overflow issues */
+}
+
+/* Header & Bio */
+.content-header { margin-bottom: 30px; }
+.user-badge { color: #38bdf8; margin-left: 6px; }
+.bio-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 24px;
+}
+
+/* Tabs Navigation */
+.profile-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 32px;
+}
+
+.tab-item {
+  padding-bottom: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.tab-item:hover { color: var(--text-main); }
+.tab-item.active { color: var(--text-main); }
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 -2px 10px var(--accent);
+}
+
+/* Glass Cards */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stage-badge {
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Progress Bar */
+.progress-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 16px 0 8px 0;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #38bdf8);
+  border-radius: 10px;
+}
+.progress-text { font-size: 13px; color: var(--accent); font-weight: 600; }
+
+/* Tech Stack Tags */
+.tech-stack { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.tech-tag {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tech-tag i { width: 8px; height: 8px; border-radius: 50%; }
+
+/* List Items (Open Source) */
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+.list-row:last-child { border-bottom: none; padding-bottom: 0; }
+.list-info h4 { font-size: 15px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+.repo-stats { display: flex; gap: 12px; font-size: 13px; color: var(--text-muted); }
+
+/* ================= RIGHT SIDEBAR ================= */
+.right-sidebar { position: sticky; top: 90px; }
+.section-label { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #cbd5e1; }
+
+.skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-pill {
+  background: rgba(99, 102, 241, 0.15);
+  color: #c7d2fe;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.availability-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.contact-email {
+  color: var(--text-muted);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .page-container { grid-template-columns: 240px 1fr; }
+  .right-sidebar { display: none; }
+}
+
+@media (max-width: 800px) {
+  .page-container { grid-template-columns: 1fr; padding: 0 16px; margin-top: 20px; }
+  .left-sidebar { position: static; text-align: center; margin-bottom: 40px; }
+  .profile-avatar-wrap { margin: 0 auto 20px auto; }
+  .profile-meta-list { align-items: center; }
+  .profile-tabs { overflow-x: auto; white-space: nowrap; padding-bottom: 0; }
+}
+/* ================= THEME VARIABLES ================= */
+:root {
+  /* Common Colors (Stay the same) */
+  --accent: #6366f1;
+  --success: #22c55e;
+  --font-main: 'Inter', sans-serif;
+
+  /* DARK MODE (Default) */
+  --bg-body: #020617;
+  --bg-image: radial-gradient(circle at 50% 0%, #2e1065, #020617 60%);
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --tag-bg: rgba(15, 23, 42, 0.6);
+  --btn-ghost-bg: rgba(255, 255, 255, 0.05);
+  --btn-ghost-border: rgba(255, 255, 255, 0.1);
+  --shadow: none;
+}
+
+/* LIGHT MODE OVERRIDES */
+body.light {
+  --bg-body: #f1f5f9; /* Soft Slate Grey */
+  --bg-image: none;   /* Clean flat background for light mode */
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-main: #0f172a; /* Dark Slate */
+  --text-muted: #64748b;
+  --tag-bg: #f1f5f9;
+  --btn-ghost-bg: #ffffff;
+  --btn-ghost-border: #cbd5e1;
+  /* Soft Premium Shadow */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* ================= BASE STYLES ================= */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-main); }
+
+body {
+  background-color: var(--bg-body);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ================= UPDATED CARD STYLES ================= */
+/* Update your existing .glass-card to use these variables */
+.glass-card {
+  background: var(--card-bg);
+  /* Remove blur in light mode for crispness, keep in dark */
+  backdrop-filter: blur(12px); 
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow); /* Adds depth in light mode */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Update Tech Tag Backgrounds */
+.tech-tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  /* ... keep other properties ... */
+}
+
+/* Update Ghost Buttons */
+.btn-ghost {
+  background: var(--btn-ghost-bg);
+  border: 1px solid var(--btn-ghost-border);
+  color: var(--text-main);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+/* Light Mode Specific Tweaks */
+body.light .profile-avatar-wrap .avatar-img {
+  border-color: #ffffff; /* White border looks cleaner in light mode */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.light .tab-item:hover {
+  color: var(--accent);
+  background: rgba(99, 102, 241, 0.05); /* Subtle hover state */
+  border-radius: 6px;
+}
+
+/* Make the progress bar track visible on white */
+body.light .progress-track {
+  background: #e2e8f0;
+}
+
+/* Fix text contrast in sidebars */
+body.light .section-label {
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 12px;
+}
+/* --- LIGHT MODE CONTRAST FIXES --- */
+
+/* 1. Fix the Bio Text */
+body.light .bio-text {
+  color: #334155 !important; /* Dark Slate (High Contrast) */
+  font-weight: 500;
+}
+
+/* 2. Fix the Skills/Tech Tags */
+body.light .tech-tag,
+body.light .skill-pill {
+  background: #e2e8f0;       /* Darker background than white */
+  color: #0f172a;            /* Black text */
+  border: 1px solid #cbd5e1; /* Visible border */
+  font-weight: 600;
+}
+
+/* 3. Fix the "Welcome to my space" header text if needed */
+body.light .content-header p {
+  color: #475569 !important;
+}
+
+/* 4. Make links in the bio stand out */
+body.light .bio-text strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+/* Container: Forces buttons to sit side-by-side with equal spacing */
+.action-buttons {
+  display: flex;
+  justify-content: space-between; /* Spreads them out */
+  gap: 12px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Shared Button Styles */
+.btn {
+  flex: 1; /* Both buttons take up exactly 50% width */
+  height: 44px; /* Explicit height fixes vertical misalignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between Star and Text */
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1; /* Prevents text from sitting too high/low */
+}
+
+/* Primary Button (Follow) */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: 1px solid transparent; /* Invisible border to match Ghost button size */
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Ghost Button (Message) */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+  box-sizing: border-box; /* Ensures border is calculated inside the height */
+}
+
+/* Hover Effects */
+.btn:hover {
+  transform: translateY(-2px);
+}
+/* ================= LEFT SIDEBAR ALIGNMENT ================= */
+.left-sidebar {
+  position: sticky;
+  top: 90px;
+  text-align: center; /* Forces all text/images to center horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally centers the flex items */
+  width: 100%;
+}
+
+.profile-avatar-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px auto; /* Enforce horizontal center */
+}
+
+/* Fix the Social Links Block */
+.profile-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+  align-items: center; /* Centers the links horizontally */
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers text inside the row */
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+  width: 100%;
+}
+
+/* ================= BUTTON POSITION FIX ================= */
+.action-buttons {
+  display: flex;
+  justify-content: center; /* Centers the button group */
+  gap: 12px;
+  width: 100%;
+  padding: 0 10px; /* Prevents buttons from touching edges */
+}
+
+.btn {
+  flex: 1; /* Forces both buttons to be equal width */
+  height: 44px; /* Fixed height for exact alignment */
+  display: flex;
+  align-items: center;     /* Vertically centers text/icon */
+  justify-content: center; /* Horizontally centers text/icon */
+  gap: 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 0; /* REMOVES line-height bug causing jumps */
+  padding: 0;     /* Resets padding to let Flexbox handle spacing */
+}
+
+/* Fix specific alignment for the icon inside the button */
+.btn span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-top: -2px; /* Micro-adjustment to lift the emoji slightly if needed */
+}
+
+/* Primary Button (Follow) */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: 2px solid transparent; /* Invisible border to match Ghost size */
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Ghost Button (Message) */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-main);
+  border: 2px solid var(--card-border); /* Explicit border width */
+}
+
+/* Light Mode visibility fix */
+body.light .btn-ghost {
+  border-color: #cbd5e1;
+  color: #334155;
+}
+/* ================= PROFILE STATS ROW ================= */
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px; /* Space between the numbers */
+  width: 100%;
+  padding: 16px 0;
+  margin: 16px 0;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Light Mode Specifics for High Contrast */
+body.light .stat-value {
+  color: #0f172a;
+}
+body.light .stat-label {
+  color: #64748b;
+}
+body.light .profile-stats {
+  border-color: #e2e8f0;
+}
+/* ================= LIST ITEMS (Discussions/Activity) ================= */
+.discussion-item {
+  display: flex;
+  align-items: center; /* Center vertically */
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.2s ease;
+}
+
+.discussion-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.discussion-item:first-child {
+  padding-top: 0;
+}
+
+/* Typography */
+.disc-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.disc-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.highlight {
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* ================= AVATARS & ICONS ================= */
+/* User Avatars in discussions */
+.avatar-small {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--card-border);
+}
+
+/* Emoji Icon Boxes (The square backgrounds) */
+.icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05); /* Dark mode default */
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0; /* Prevents squishing */
+}
+
+/* Smaller icon box for Activity feed */
+.icon-box.small {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  border-radius: 50%; /* Circle looks better for timeline activity */
+}
+
+/* ================= LIGHT MODE FIXES ================= */
+body.light .icon-box {
+  background: #f1f5f9; /* Light grey background */
+  border-color: #e2e8f0;
+}
+
+body.light .disc-title {
+  color: #0f172a; /* Dark text for title */
+}
+
+body.light .avatar-small {
+  border-color: #e2e8f0;
+}
+/* ================= NEW CONTENT STYLES ================= */
+
+/* Overview Stats Grid */
+.overview-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.stat-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--card-border);
+}
+
+.stat-box .stat-value {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Project Cards */
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.project-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.project-card p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.project-meta {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Discussion Rows */
+.discussion-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.discussion-row:last-child {
+  border-bottom: none;
+}
+
+.discussion-row .disc-title {
+  margin: 0 0 4px 0;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+}
+.discussion-row .disc-title:hover {
+  color: var(--accent);
+}
+
+/* Streak Rows */
+.streak-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 15px;
+}
+
+.streak-row strong {
+  color: var(--success);
+}
+
+.streak-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* Activity Items */
+.activity-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.activity-item span {
+  color: var(--text-muted);
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: #020617;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(59,130,246,0.35), transparent 45%),
+    radial-gradient(circle at 70% 40%, rgba(34,197,94,0.25), transparent 50%),
+    radial-gradient(circle at 50% 70%, rgba(139,92,246,0.25), transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at center,
+    rgba(59,130,246,0.35),
+    rgba(34,197,94,0.25),
+    transparent 65%);
+  filter: blur(50px);
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+/* Ensure the body allows the background to show */
+body {
+  position: relative;
+  /* background-color: #0a0a0a;  <-- Optional: match your login dark bg */
+  z-index: 1;
+}
+
+/* 🔥 The Fixed Background Glow */
+.background-glow {
+  position: fixed;
+  inset: 0; /* Stretches to full screen */
+  z-index: -1; /* Puts it behind everything */
+  pointer-events: none; /* Allows you to click through it */
+  
+  /* The Gradient Pattern */
+  background:
+    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(34, 197, 94, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.15), transparent 45%);
+    
+  /* Soft Blur */
+  filter: blur(60px);
+}
+
+/* Light/Dark Mode Adjustment (Optional) */
+body.light .background-glow {
+  opacity: 0.6; /* Softer glow in light mode */
+}
+
+body.dark .background-glow {
+  opacity: 1; /* Full glow in dark mode */
+}
+/* Ensure body background is dark enough for glow to pop */
+body.dark {
+  background-color: #050505; /* Deep black increases contrast */
+}
+
+/* 🔥 High-Visibility Glow */
+.background-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  
+  /* Increased opacity (0.25 -> 0.4) and size (40% -> 60%) */
+  background:
+    radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.4), transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.3), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.3), transparent 60%);
+    
+  /* Lower blur slightly to keep colors richer */
+  filter: blur(50px);
+}
+
+/* Optional: Add a subtle pulse animation to catch the eye */
+@keyframes glowPulse {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+.background-glow {
+  animation: glowPulse 8s ease-in-out infinite;
+}

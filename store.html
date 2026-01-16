@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect — Store</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="storestyle.css">
+ 
+</head>
+<body class="light">
+
+<header class="navbar">
+  <div class="logo">
+    <img src="assets/logo-light.png" alt="Connect logo">
+    <span>Connect</span>
+  </div>
+
+  <nav>
+    <a href ="project.html">Project</a>
+    <a href="index.html">Home</a>
+    <a href="hub.html">Hub</a>
+    <a href="store.html">Store</a>
+    <a href="tutorial.html">How it works</a>
+
+    <div class="theme-switch" id="themeToggle">
+      <div class="switch-circle"></div>
+    </div>
+
+    <a href="profile.html" class="nav-profile">
+      <img src="assets/me.png" alt="My profile">
+    </a>
+  </nav>
+</header>
+
+  <main class="hero">
+    <div class="hero-glow"></div> 
+    
+    <div class="store-top-section">
+      <div class="store-header">
+  <h1 class="store-title">
+    Store 
+    <img src="assets/store-icon.png" class="title-icon" alt="Store Icon">
+  </h1>
+  <p class="store-subtitle">Discover and purchase finished products built by our community</p>
+</div>
+      
+      
+      <div class="search-container">
+        <input type="text" placeholder="Search products..." class="store-search">
+      </div>
+
+      <div class="filter-controls">
+        <div class="filter-group category-filters">
+          <button class="pill selected">All</button>
+          <button class="pill">Apps</button>
+          <button class="pill">Tools</button>
+        </div>
+
+        <div class="filter-group sort-filters">
+          <button class="pill">Trending</button>
+          <button class="pill">Highest Selling</button>
+          <select class="price-select">
+            <option value="">Price Filter</option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="polaroid-board">
+      
+      <figure class="polaroid">
+        <div class="feature-card">
+          <img src="assets/wave-light.png" alt="FinFetch" class="card-icon">
+          <div class="details">
+            <h4>FinFetch</h4>
+            <span class="tag">Finance App</span>
+            <p>Manage investments and track expenses with ease.</p>
+            <div class="price-row">
+              <strong>₹499</strong>
+              <button class="btn-buy">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <figcaption>Personal Finance</figcaption>
+      </figure>
+
+      <figure class="polaroid">
+        <div class="feature-card">
+          <img src="https://placehold.co/200x200/f3e8ff/9333ea?text=AI" alt="AI Wizard" class="card-icon">
+          <div class="details">
+            <h4>AI Wizard</h4>
+            <span class="tag">Content Tool</span>
+            <p>Generate high-quality articles in seconds using AI.</p>
+            <div class="price-row">
+              <strong>₹299</strong>
+              <button class="btn-demo">Try Demo</button>
+            </div>
+          </div>
+        </div>
+        <figcaption>Content Creator</figcaption>
+      </figure>
+
+      <figure class="polaroid">
+        <div class="feature-card">
+          <img src="https://placehold.co/200x200/ffedd5/ea580c?text=CW" alt="Crypto" class="card-icon">
+          <div class="details">
+            <h4>CryptoWallet</h4>
+            <span class="tag">Blockchain</span>
+            <p>Secure wallet app for managing your crypto portfolio.</p>
+            <div class="price-row">
+              <strong>₹599</strong>
+              <button class="btn-buy">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <figcaption>Portfolio Tracker</figcaption>
+      </figure>
+
+      <figure class="polaroid">
+        <div class="feature-card">
+          <img src="https://placehold.co/200x200/dbeafe/2563eb?text=GT" alt="Growth" class="card-icon">
+          <div class="details">
+            <h4>Growth Tracker</h4>
+            <span class="tag">Productivity</span>
+            <p>Build habits with reminders and detailed tracking.</p>
+            <div class="price-row">
+              <strong>₹399</strong>
+              <button class="btn-demo">Try Demo</button>
+            </div>
+          </div>
+        </div>
+        <figcaption>Habit Builder</figcaption>
+      </figure>
+
+    </div>
+  </main>
+
+  <script src="stored.js"></script>
+</body>
+</html>

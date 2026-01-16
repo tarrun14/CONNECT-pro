@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connect — Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+ 
+ <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="projects.css" >
+  
+</head>
+<body>
+    <div class="background-glow"></div>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="assets/logo-light.png" alt="Connect logo">
+    <span>Connect</span>
+  </div>
+
+  <nav>
+    <a href ="project.html">Project</a>
+    <a href="index.html">Home</a>
+    <a href="hub.html">Hub</a>
+    <a href="store.html">Store</a>
+    <a href="tutorial.html">How it works</a>
+
+
+    <!-- Theme Toggle -->
+    <div class="theme-switch" id="themeToggle">
+      <div class="switch-circle"></div>
+    </div>
+    <a href="profile.html" class="nav-profile">
+  <img src="assets/me.png" alt="My profile">
+</a>
+
+  </nav>
+</header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-title">Projects</div>
+      <div class="hero-sub">Browse community posts to help, collaborate, and share ideas</div>
+
+      <div class="search-row">
+        <div class="search-box">
+          <span>🔍</span>
+          <input placeholder="Search posts...">
+        </div>
+        <button class="search-cta">
+            <span>Create Post</span>
+  <span class="plus">＋</span>
+  
+</button>
+
+      </div>
+    </div>
+  </section>
+
+<div class="filters">
+    <div class="pills">
+      <div class="pill active">All</div>
+      <div class="pill">Collaboration</div>
+      <div class="pill">Help Request</div>
+      <div class="pill">Bug / Issue</div>
+      <div class="pill">Feedback</div>
+      <div class="pill">Idea / Brainstorm</div>
+    </div>
+    
+    <div class="sort">
+      <span>Sort by:</span>
+      <select class="sort-select">
+        <option value="trending">Trending</option>
+        <option value="top-rated">Top Rated</option>
+        <option value="newest">Newest</option>
+        <option value="discussion">Most Discussed</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="content-layout">
+    
+    <aside class="side-legend">
+      <span class="legend-label">Status Legend</span>
+      
+      <div class="legend-item">
+        <span class="dot live"></span>
+        <span>Idea</span>
+      </div>
+
+      <div class="legend-item">
+        <span class="dot process"></span>
+        <span>In Process</span>
+      </div>
+
+      <div class="legend-item">
+        <span class="dot completed"></span>
+        <span>Live</span>
+      </div>
+    </aside>
+
+    <main class="container">
+      <div class="grid">
+
+        <article class="card">
+          <div class="card-header">
+            <div class="badge category">
+              <span class="icon">💡</span>
+              <span>Idea / Brainstorm</span>
+            </div>
+            <div class="badge status">
+              <span class="status-icon">⚡</span>
+              <span> Idea</span>
+            </div>
+          </div>
+          <h3 class="card-title">Idea: Habit tracker for developers</h3>
+          <p class="card-desc">An app to gamify productivity by tracking coding habits and daily streaks.</p>
+          <div class="card-tags">
+            <span class="tag">Startups</span>
+            <span class="tag">Product</span>
+          </div>
+          <div class="card-footer">
+            <div class="user-info">
+              <img src="assets/avatar1.jpg" alt="User" class="avatar-small">
+              <span class="username">Jake Nolan</span>
+              <span class="rating">⭐ 52</span>
+              <span class="extra-info">@ FinFetch</span>
+            </div>
+            <a href="project-detail.html" class="card-btn">View</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="badge category">
+              <span class="icon">💡</span>
+              <span>Idea / Brainstorm</span>
+            </div>
+            <div class="badge status">
+              <span class="status-icon">⚡</span>
+              <span> Idea</span>
+            </div>
+          </div>
+          <h3 class="card-title">Auto-generate README from Figma</h3>
+          <p class="card-desc">An idea: Automatically generate a project README based on a Figma design.</p>
+          <div class="card-tags">
+            <span class="tag">Design</span>
+            <span class="tag">AI</span>
+          </div>
+          <div class="card-footer">
+            <div class="user-info">
+              <img src="assets/avatar2.jpg" alt="User" class="avatar-small">
+              <span class="username">Jessica Park</span>
+              <span class="rating">⭐ 81</span>
+              <span class="extra-info">💬 12</span>
+            </div>
+            <button class="card-btn">View</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="badge category" style="background:rgba(59,130,246,0.15); color:#93c5fd; border-color:rgba(59,130,246,0.3)">
+              <span class="icon">🙋‍♂️</span>
+              <span>Help Request</span>
+            </div>
+            <div class="badge status" style="background:rgba(148,163,184,0.15); color:#e2e8f0; border-color:rgba(148,163,184,0.3)">
+              <span class="status-icon">⏳</span>
+              <span>In Process</span>
+            </div>
+          </div>
+          <h3 class="card-title">Fix bug in Lexify's login button</h3>
+          <p class="card-desc">Need help fixing unresponsive login button in the Lexify app.</p>
+          <div class="card-tags">
+            <span class="tag">Bug</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Lexify</span>
+          </div>
+          <div class="card-footer">
+            <div class="user-info">
+              <img src="assets/avatar3.jpg" alt="User" class="avatar-small">
+              <span class="username">Sarah Lee</span>
+              <span class="rating">⭐ 68</span>
+              <span class="extra-info">💬 11</span>
+            </div>
+            <button class="card-btn">Vexy</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div class="badge category" style="background:rgba(249,115,22,0.15); color:#fdba74; border-color:rgba(249,115,22,0.3)">
+              <span class="icon">💬</span>
+              <span>Feedback</span>
+            </div>
+            <div class="badge status" style="background:rgba(34,197,94,0.15); color:#86efac; border-color:rgba(34,197,94,0.3)">
+              <span class="status-icon">✅</span>
+              <span>Live</span>
+            </div>
+          </div>
+          <h3 class="card-title">CryptoHub site design critique</h3>
+          <p class="card-desc">Looking for UI/UX feedback on the new Landing page design for CryptoHub.</p>
+          <div class="card-tags">
+            <span class="tag">UI/UX</span>
+            <span class="tag">Crypto</span>
+          </div>
+          <div class="card-footer">
+            <div class="user-info">
+              <img src="assets/avatar4.jpg" alt="User" class="avatar-small">
+              <span class="username">Emily Wong</span>
+              <span class="rating">⭐ 94</span>
+              <span class="extra-info">💬 23</span>
+            </div>
+            <button class="card-btn">View</button>
+          </div>
+        </article>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="projects.js"></script>
+</body>
+</html>

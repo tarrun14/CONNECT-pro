@@ -1,0 +1,569 @@
+
+
+:root {
+  --bg-dark: #020617;
+  --text-light: #0f172a;
+  --text-dark: #f8fafc;
+  --accent: linear-gradient(90deg, #3b82f6, #22c55e, #8b5cf6);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ================= LIGHT / DARK ================= */
+
+body.light {
+  color: var(--text-light);
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo img {
+  width: 36px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 22px;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 1;
+  background: rgba(148,163,184,0.15);
+  transform: translateY(-2px);
+}
+
+body.dark nav a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ================= THEME TOGGLE ================= */
+
+.theme-switch {
+  width: 56px;
+  height: 28px;
+  background: #cbd5f5;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch-circle {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+body.dark .theme-switch {
+  background: linear-gradient(
+    90deg,
+    rgba(148,163,184,0.45),
+    rgba(99,102,241,0.35)
+  );
+}
+
+body.dark .switch-circle {
+  transform: translateX(28px);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 90px 20px 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 🌞 LIGHT MODE → white wave */
+body.light .hero {
+  background-image: url("assets/wave-light.png");
+}
+
+/* 🌙 DARK MODE → original dark wave */
+body.dark .hero {
+  background-image: url("assets/wave-dark.png");
+}
+
+.hero-logo {
+  width: 140px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.motto {
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+.description {
+  max-width: 560px;
+  margin: 20px auto;
+}
+
+/* ================= BUTTONS ================= */
+
+.actions {
+  margin-top: 35px;
+}
+
+.btn {
+  padding: 14px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.secondary {
+  border: 2px solid rgba(148,163,184,0.6);
+  color: inherit;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.75;
+}
+
+/* ================= LOGO IMAGE SWAP ================= */
+
+body.light .logo img,
+body.light .hero-logo {
+  content: url("assets/logo-light.png");
+}
+
+body.dark .logo img,
+body.dark .hero-logo {
+  content: url("assets/logo-dark.png");
+}
+/* FIX: Separate features from hero background */
+.features {
+  background: #020617; /* same as dark bg */
+  margin-top: 0;
+}
+/* ===== HARD SEPARATION BETWEEN HERO & FEATURES ===== */
+
+/* Hero should not visually bleed down */
+.hero {
+  padding-bottom: 140px;
+}
+
+/* Features section – solid base like screenshot */
+.features {
+  background: #020617;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+}
+.feature {
+  background: rgba(17, 24, 39, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+.features {
+  padding-top: 80px;
+}
+/* FEATURES SECTION */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 80px 40px;
+  background: transparent; /* IMPORTANT */
+}
+
+/* FEATURE CARDS (3 boxes like screenshot) */
+.feature {
+  background: rgba(17, 24, 39, 0.9);
+  border-radius: 20px;
+  padding: 28px 30px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional subtle hover (can remove if you want static) */
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+body.light .feature {
+  background: #ffffff;
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.feature:hover {
+  transform: translateY(-4px);
+}
+/* LIGHT MODE NAVBAR – subtle separation */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+body.light .navbar {
+  background: #f8fafc;
+}
+/* NAVBAR – subtle separation in BOTH modes */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+/* 🌞 Light mode – slightly more contrast */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+/* 🌙 Dark mode – subtle lift */
+body.dark .navbar {
+  background: rgba(2, 6, 23, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+.btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+.primary:hover {
+   filter: brightness(1.05);
+  box-shadow: 0 8px 22px rgba(59,130,246,0.35);
+  filter: brightness(1.05);
+}
+.secondary:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+.secondary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 0 3px rgba(148,163,184,0.35);
+}
+
+body.light .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      60% 50% at 50% 35%,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.25),
+      transparent 70%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+body.dark .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      60% 50% at 50% 35%,
+      rgba(99, 102, 241, 0.25),
+      rgba(59, 130, 246, 0.15),
+      transparent 70%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+}
+body.light .hero::before {
+  background-image: url("assets/wave-light.png");
+}
+body.dark .hero::before {
+  background-image: url("assets/wave-dark.png");
+}
+body.light .hero::after {
+  background:
+    radial-gradient(
+      70% 55% at 50% 35%,
+      rgba(255,255,255,0.7),
+      rgba(255,255,255,0.35),
+      transparent 70%
+    );
+}
+body.dark .hero::after {
+  background:
+    radial-gradient(
+      70% 55% at 50% 35%,
+      rgba(99,102,241,0.35),
+      rgba(59,130,246,0.18),
+      transparent 70%
+    );
+}
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+.hero-logo {
+  /* This removes the white background from the logo in Light Mode */
+  mix-blend-mode: multiply; 
+  
+  /* Adds a subtle soft glow around the brain itself */
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.2)); 
+  position: relative;
+  z-index: 10;
+}
+
+body.dark .hero-logo {
+  /* In Dark Mode, 'screen' makes the logo's dark parts transparent instead */
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.4));
+}
+
+.description {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}body.dark .description {
+  background: rgba(0, 0, 0, 0.35);
+  color: #f8fafc;
+}
+body.light .description {
+  background: rgba(255, 255, 255, 0.6);
+  color: #0f172a;
+}
+body.light .description {
+  background: rgba(255, 255, 255, 0.4);
+}
+body.light .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      80% 60% at 50% 0%,
+      rgba(255,255,255,0.75),
+      rgba(255,255,255,0.35),
+      transparent 70%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+body.dark .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      80% 60% at 50% 0%,
+      rgba(99,102,241,0.35),
+      rgba(59,130,246,0.18),
+      transparent 70%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+.hero::after {
+  mask-image: linear-gradient(
+    to bottom,
+    black 55%,
+    transparent 100%
+  );
+}
+@keyframes heroFloat {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 50% 47%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+.hero::before {
+  animation: heroFloat 14s ease-in-out infinite;
+}
+
+@keyframes heroGlowFloat {
+  0% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+/* Update this section in your CSS */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x; /* Essential for looping */
+  background-position: 0 center;
+  background-size: auto 100%; /* Keeps height consistent while allowing width to tile */
+  z-index: 0;
+  
+  /* Link the new animation here */
+  animation: slideBg 60s linear infinite; 
+}
+
+/* Ensure the light/dark images are still applied */
+body.light .hero::before {
+  background-image: url("assets/wave-light.png");
+}
+
+body.dark .hero::before {
+  background-image: url("assets/wave-dark.png");
+}
+@keyframes slideBg {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 2000px; /* Adjust this number based on your image width for speed */
+  }
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: #050505; /* Deep dark background so the glow is visible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* The primary background glow */
+/* 1. Dark Background */
+body.dark {
+  background-color: #050505; /* Deep black */
+  color: #e5e7eb;
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. The Fixed Background Glow */
+.background-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* Behind everything */
+  pointer-events: none;
+  
+  /* The Colorful Gradients */
+  background:
+    radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.4), transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.3), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.3), transparent 60%);
+    
+  /* Blur & Animate */
+  filter: blur(50px);
+  animation: glowPulse 8s ease-in-out infinite;
+  
+  /* Hide in light mode (optional) */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+body.dark .background-glow {
+  opacity: 1;
+}
+
+/* 3. Animation */
+@keyframes glowPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ================= COMPONENT UPDATES ================= */
+

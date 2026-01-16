@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Habit Tracker — Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="project-details.css">
+</head>
+
+<body class="dark">
+  
+
+<header class="navbar">
+  <div class="logo">
+    <img src="assets/logo-light.png" alt="Connect logo">
+    <span>Connect</span>
+  </div>
+
+  <nav>
+    <a href ="project.html">Project</a>
+    <a href="index.html">Home</a>
+    <a href="hub.html">Hub</a>
+    <a href="store.html">Store</a>
+    <a href="tutorial.html">How it works</a>
+
+
+    <!-- Theme Toggle -->
+    <div class="theme-switch" id="themeToggle">
+      <div class="switch-circle"></div>
+    </div>
+    <a href="profile.html" class="nav-profile">
+  <img src="assets/me.png" alt="My profile">
+</a>
+
+  </nav>
+</header>
+</header>
+
+<section class="project-hero">
+  <div class="page-width hero-content">
+    <div class="project-icon-large">💡</div>
+    <div class="project-header-info"><div class="project-owner">
+  Built by <span class="owner-name">Tarrun B</span>
+</div>
+
+      <h1 class="project-h1">Habit Tracker for Developers</h1>
+      <p class="project-tagline">
+        An app to gamify productivity by tracking coding habits, daily streaks, and deep-work sessions.
+      </p>
+      <div class="project-meta-row">
+        <span class="meta-tag">Web App</span>
+        <span class="meta-tag">Startup</span>
+        <span class="meta-stat">⭐ 52</span>
+        <span class="meta-stat">👥 320 Followers</span>
+        <span class="meta-stat">🕒 Updated 2h ago</span>
+      </div>
+
+    </div>
+    
+    <div class="project-cta-row">
+  <button class="follow-project-btn">★ Follow Project</button>
+  <a href="#" class="demo-btn">▶ Try Demo</a>
+</div>
+  </div>
+</section>
+
+<div class="project-tabs-wrap">
+  <div class="page-width">
+    <div class="tabs-list">
+      <button class="tab-link active" data-tab="overview">Overview</button>
+      <button class="tab-link" data-tab="updates">Updates <span class="badge-count">2</span></button>
+      <button class="tab-link" data-tab="feedback">Feedback</button>
+      <button class="tab-link" data-tab="roles">Open Roles <span class="badge-count">3</span></button>
+      <button class="tab-link" data-tab="resources">Resources</button>
+      <button class="tab-link" data-tab="chat">Chat</button>
+      <button class="tab-link" data-tab="collab">Collab <span class="badge-count">4</span></button>
+      <button class="tab-link" data-tab="help">Help / Bug Hunt</button>
+      <button class="tab-link" data-tab="quicktask">
+  Quick Task <span class="badge-count">3</span>
+</button>
+
+
+
+
+
+      <!-- ✅ ADDED ONLY THIS BUTTON -->
+      <button class="tab-link" data-tab="discussions">
+        Discussions <span class="badge-count">4</span>
+      </button>
+      <!-- ✅ NOTHING ELSE CHANGED -->
+    </div>
+  </div>
+</div>
+
+<main class="page-width project-grid">
+
+<div class="main-col">
+
+  <!-- ================= OVERVIEW ================= -->
+  <div class="tab-content detail-card" data-content="overview">
+
+    <h3>Overview</h3>
+    <p>
+      This project helps developers build consistent coding habits by integrating
+      with GitHub and GitLab to automatically track streaks.
+    </p>
+    <p>
+      The goal is to encourage focused deep-work sessions instead of unhealthy
+      long coding hours. Currently in MVP stage.
+    </p>
+
+    <div class="detail-card" style="margin-top:24px">
+      <div class="card-head">
+        <h3>Current Progress</h3>
+        <span class="progress-percent">45% Complete</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" style="width:45%"></div>
+      </div>
+
+      <div class="task-progress-row">
+        <span>MVP Core Features</span>
+        <div class="mini-track">
+          <div class="mini-fill" style="width:80%"></div>
+        </div>
+      </div>
+
+      <div class="task-progress-row">
+        <span>User Authentication</span>
+        <div class="mini-track">
+          <div class="mini-fill done" style="width:100%"></div>
+        </div>
+      </div>
+
+      <div class="task-progress-row">
+        <span>Gamification Engine</span>
+        <div class="mini-track">
+          <div class="mini-fill" style="width:30%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-card" style="margin-top:24px">
+      <h3>Tasks / Milestones</h3>
+
+      <div class="milestone-item">
+        <span>🚀</span>
+        <div class="ms-info">
+          <div class="ms-title">Launch Beta Landing Page</div>
+          <div class="ms-date">Target: Oct 25</div>
+        </div>
+        <span class="in-days">5 days left</span>
+      </div>
+
+      <div class="milestone-item">
+        <span>📱</span>
+        <div class="ms-info">
+          <div class="ms-title">Mobile App Testing</div>
+          <div class="ms-date">Target: Nov 10</div>
+        </div>
+        <span class="in-weeks">2 weeks left</span>
+      </div>
+    </div>
+
+    <div class="detail-card" style="margin-top:24px">
+      <div class="card-head">
+        <h3>Latest Discussions</h3>
+        <button class="small-btn">Start Discussion</button>
+      </div>
+
+      <div class="discussion-item">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg">
+        <div>
+          <div class="disc-title">Dark mode contrast feedback</div>
+          <div class="disc-meta">Sarah Lee • 6h ago • 12 replies</div>
+        </div>
+      </div>
+
+      <div class="discussion-item">
+        <img src="https://randomuser.me/api/portraits/women/52.jpg">
+        <div>
+          <div class="disc-title">Firebase vs Supabase?</div>
+          <div class="disc-meta">Jessica Park • 1d ago • 8 replies</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= UPDATES ================= -->
+  <div class="detail-card tab-content" data-content="updates" hidden>
+  <h3>Project Updates</h3>
+
+<div class="milestone-item">
+  <span>🆕</span>
+  <div class="ms-info">
+    <div class="ms-title">Dark mode officially released</div>
+    <div class="ms-date">2 days ago</div>
+  </div>
+</div>
+
+<div class="milestone-item">
+  <span>🚀</span>
+  <div class="ms-info">
+    <div class="ms-title">MVP crossed 45% completion</div>
+    <div class="ms-date">5 days ago</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- ================= FEEDBACK ================= -->
+  <div class="detail-card tab-content" data-content="feedback" hidden>
+    <h3>User Feedback</h3>
+    <p class="disc-title">“Love the idea, streak system feels motivating 🔥”</p>
+    <p class="disc-meta">— Alex, Frontend Dev</p>
+  </div>
+
+  <!-- ================= ROLES ================= -->
+  <div class="detail-card tab-content" data-content="roles" hidden>
+    <h3>Open Roles</h3>
+
+<div class="role-item">⚡ React Native Developer</div>
+<div class="role-item">🎨 Motion Designer</div>
+<div class="role-item">📈 Growth Marketer</div>
+
+<p style="color:#94a3b8; font-size:13px; margin-top:14px">
+  Looking for people interested in long-term ownership and collaboration.
+</p>
+
+  </div>
+
+  <!-- ================= RESOURCES ================= -->
+  <div class="detail-card tab-content" data-content="resources" hidden>
+    <h3>Resources</h3>
+    <ul style="color:#cbd5e1; line-height:1.8">
+      <li>📄 Product Requirements Doc (PRD)</li>
+      <li>🎨 Figma Design File</li>
+      <li>📦 GitHub Repository</li>
+      <li>🧠 Research Notes</li>
+    </ul>
+  </div>
+
+  <!-- ================= DISCUSSIONS ================= -->
+  <div class="detail-card tab-content" data-content="discussions" hidden>
+
+    <div class="card-head">
+      <h3>Project Discussions</h3>
+      <button class="small-btn">Start Discussion</button>
+    </div>
+
+    <div class="discussion-item">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg">
+      <div>
+        <div class="disc-title">Dark mode contrast feedback</div>
+        <div class="disc-meta">Sarah Lee · 6h ago · 12 replies</div>
+      </div>
+    </div>
+
+    <div class="discussion-item">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <div>
+        <div class="disc-title">Firebase vs Supabase for auth?</div>
+        <div class="disc-meta">Jake Nolan · 1d ago · 8 replies</div>
+      </div>
+    </div>
+    <!-- Discussion 3 -->
+<div class="discussion-item">
+  <img src="https://randomuser.me/api/portraits/women/68.jpg">
+  <div>
+    <div class="disc-title">Gamification ideas for maintaining streaks?</div>
+    <div class="disc-meta">
+      Priya · 2d ago · <span style="color:#7c7cff">15 replies</span>
+    </div>
+  </div>
+</div>
+
+<!-- Discussion 4 -->
+<div class="discussion-item">
+  <img src="https://randomuser.me/api/portraits/men/44.jpg">
+  <div>
+    <div class="disc-title">Weekly progress update format suggestion</div>
+    <div class="disc-meta">
+      Mark Tan · 3d ago · <span style="color:#7c7cff">5 replies</span>
+    </div>
+  </div>
+</div>
+
+<!-- Discussion 5 -->
+<div class="discussion-item">
+  <img src="https://randomuser.me/api/portraits/men/23.jpg">
+  <div>
+    <div class="disc-title">Should streaks reset after a missed day?</div>
+    <div class="disc-meta">
+      Rahul · 4d ago · <span style="color:#7c7cff">18 replies</span>
+    </div>
+  </div>
+</div>
+
+<!-- Discussion 6 -->
+<div class="discussion-item">
+  <img src="https://randomuser.me/api/portraits/women/12.jpg">
+  <div>
+    <div class="disc-title">Mobile vs Web — which should launch first?</div>
+    <div class="disc-meta">
+      Ananya · 5d ago · <span style="color:#7c7cff">9 replies</span>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+<!-- ================= PROJECT CHAT ================= -->
+<div class="detail-card tab-content" data-content="chat" hidden>
+
+  <div class="card-head">
+    <h3>Project Chat</h3>
+    <span style="color:#64748b;font-size:13px">Casual talk · Quick updates · Questions</span>
+  </div>
+
+  <!-- Chat messages -->
+  <div class="chat-thread">
+
+    <div class="chat-msg">
+      <img src="https://randomuser.me/api/portraits/men/11.jpg" class="chat-avatar">
+      <div class="chat-bubble">
+        <div class="chat-user">Jake Nolan</div>
+        <div class="chat-text">
+          Pushed a small update to streak logic today 🚀  
+          Check commits if you’re curious.
+        </div>
+        <div class="chat-time">2h ago</div>
+      </div>
+    </div>
+
+    <div class="chat-msg">
+      <img src="https://randomuser.me/api/portraits/women/32.jpg" class="chat-avatar">
+      <div class="chat-bubble">
+        <div class="chat-user">Jessica Park</div>
+        <div class="chat-text">
+          Nice! I’ll adjust the empty-state UI to match the new flow.
+        </div>
+        <div class="chat-time">1h ago</div>
+      </div>
+    </div>
+
+    <div class="chat-msg">
+      <img src="https://randomuser.me/api/portraits/men/44.jpg" class="chat-avatar">
+      <div class="chat-bubble">
+        <div class="chat-user">Mark Tan</div>
+        <div class="chat-text">
+          Should we cap streak rewards weekly instead of daily?
+        </div>
+        <div class="chat-time">45m ago</div>
+      </div>
+    </div>
+
+    <div class="chat-msg">
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" class="chat-avatar">
+      <div class="chat-bubble">
+        <div class="chat-user">Priya</div>
+        <div class="chat-text">
+          Weekly makes sense IMO — daily might pressure users too much.
+        </div>
+        <div class="chat-time">20m ago</div>
+      </div>
+      
+    </div>
+    <!-- New user joins -->
+<div class="chat-system">
+  🔔 Arun joined the project chat
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/men/75.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">
+      Arun <span class="chat-new">New</span>
+    </div>
+    <div class="chat-text">
+      Hey everyone 👋 just found this project through Connect.  
+      This looks super interesting!
+    </div>
+    <div class="chat-time">11:02 AM</div>
+  </div>
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/men/11.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">
+      Jake Nolan <span class="chat-role">Founder</span>
+    </div>
+    <div class="chat-text">
+      Welcome Arun! Glad to have you here 🙌  
+      Feel free to ask anything.
+    </div>
+    <div class="chat-time">11:03 AM</div>
+  </div>
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/men/75.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">Arun</div>
+    <div class="chat-text">
+      Is the frontend built in React or React Native?
+    </div>
+    <div class="chat-time">11:04 AM</div>
+  </div>
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/women/32.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">Jessica Park</div>
+    <div class="chat-text">
+      React Native for mobile, React for web dashboard 👍
+    </div>
+    <div class="chat-time">11:05 AM</div>
+  </div>
+</div>
+
+<!-- Another new user -->
+<div class="chat-system">
+  🔔 Priya joined the project chat
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/women/68.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">
+      Priya <span class="chat-new">New</span>
+    </div>
+    <div class="chat-text">
+      Hi all 👋 love the idea of streak-based productivity.  
+      Are you planning GitHub heatmap integration?
+    </div>
+    <div class="chat-time">11:08 AM</div>
+  </div>
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/men/44.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">Mark Tan</div>
+    <div class="chat-text">
+      Yup! That’s actually on the roadmap for next sprint.
+    </div>
+    <div class="chat-time">11:09 AM</div>
+  </div>
+</div>
+
+<div class="chat-msg">
+  <img src="https://randomuser.me/api/portraits/women/68.jpg" class="chat-avatar">
+  <div class="chat-bubble">
+    <div class="chat-user">Priya</div>
+    <div class="chat-text">
+      Nice 😄 I’d love to give UX feedback once it’s ready.
+    </div>
+    <div class="chat-time">11:10 AM</div>
+  </div>
+</div>
+<!-- ================= COLLAB ================= -->
+<div class="detail-card tab-content" data-content="collab" hidden>
+
+  <h3>Core Collaborators</h3>
+  <p style="color:#94a3b8; margin-bottom:18px">
+    People actively interested in joining this project long-term and building it together.
+  </p>
+
+  <!-- Person 1 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/men/31.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Arjun Patel</div>
+      <div class="disc-meta">
+        Full-stack Developer · Interested in owning backend & infra
+      </div>
+    </div>
+      <span class="disc-hover-action">Join →</span>
+    <span class="meta-tag">Requested</span>
+  </div>
+
+  <!-- Person 2 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/women/46.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Neha Verma</div>
+      <div class="disc-meta">
+        Product Designer · Wants to lead UX & onboarding
+      </div>
+    </div>
+    <span class="meta-tag">Approved</span>
+  </div>
+
+  <!-- Person 3 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/men/54.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Rahul Singh</div>
+      <div class="disc-meta">
+        React Native Dev · Looking for co-founder-level involvement
+      </div>
+    </div>
+    <span class="meta-tag">In Review</span>
+  </div>
+
+  <!-- Person 4 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/women/63.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Priya Nair</div>
+      <div class="disc-meta">
+        Growth & Marketing · Wants to build GTM from scratch
+      </div>
+    </div>
+    <span class="meta-tag">Requested</span>
+  </div>
+
+  <!-- CTA -->
+  <div style="margin-top:24px; display:flex; justify-content:space-between; align-items:center">
+    <p style="color:#94a3b8; font-size:14px">
+      Want to fully join this project and build it long-term?
+    </p>
+    <button class="small-btn">Request to Join</button>
+  </div>
+
+</div>
+
+
+  </div>
+
+  <!-- Chat input -->
+  <div class="chat-input-wrap">
+    <input type="text" placeholder="Write a message…">
+    <button class="small-btn">Send</button>
+  </div>
+
+</div>
+<!-- ================= COLLAB ================= -->
+<div class="detail-card tab-content" data-content="collab" hidden>
+
+  <h3>Core Collaborators</h3>
+  <p style="color:#94a3b8; margin-bottom:18px">
+    People actively interested in joining this project long-term and building it together.
+  </p>
+
+  <!-- Person 1 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/men/31.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Arjun Patel</div>
+      <div class="disc-meta">
+        Full-stack Developer · Interested in owning backend & infra
+      </div>
+    </div>
+    <span class="meta-tag">Requested</span>
+  </div>
+
+  <!-- Person 2 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/women/46.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Neha Verma</div>
+      <div class="disc-meta">
+        Product Designer · Wants to lead UX & onboarding
+      </div>
+    </div>
+    <span class="meta-tag">Approved</span>
+  </div>
+
+  <!-- Person 3 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/men/54.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Rahul Singh</div>
+      <div class="disc-meta">
+        React Native Dev · Looking for co-founder-level involvement
+      </div>
+    </div>
+    <span class="meta-tag">In Review</span>
+  </div>
+
+  <!-- Person 4 -->
+  <div class="discussion-item">
+    <img src="https://randomuser.me/api/portraits/women/63.jpg" class="disc-avatar">
+    <div class="disc-content">
+      <div class="disc-title">Priya Nair</div>
+      <div class="disc-meta">
+        Growth & Marketing · Wants to build GTM from scratch
+      </div>
+    </div>
+    <span class="meta-tag">Requested</span>
+  </div>
+
+  <!-- CTA -->
+  <div style="margin-top:24px; display:flex; justify-content:space-between; align-items:center">
+    <p style="color:#94a3b8; font-size:14px">
+      Want to fully join this project and build it long-term?
+    </p>
+    <button class="small-btn">Request to Join</button>
+  </div>
+
+</div>
+<!-- ================= HELP / BUG HUNT ================= -->
+<div class="detail-card tab-content" data-content="help" hidden>
+
+  <div class="card-head">
+    <h3>Help / Bug Hunt</h3>
+    <button class="small-btn">Report Bug</button>
+  </div>
+
+  <!-- Bug 1 -->
+  <div class="milestone-item">
+    <span>🐞</span>
+    <div class="ms-info">
+      <div class="ms-title">Login button not responding on mobile</div>
+      <div class="ms-date">Reported by Rahul · 3h ago</div>
+    </div>
+    <span class="in-days">Open</span>
+  </div>
+
+  <!-- Bug 2 -->
+  <div class="milestone-item">
+    <span>⚠️</span>
+    <div class="ms-info">
+      <div class="ms-title">Streak resets incorrectly after timezone change</div>
+      <div class="ms-date">Reported by Alex · 1 day ago</div>
+    </div>
+    <span class="in-weeks">Investigating</span>
+  </div>
+
+  <!-- Bug 3 -->
+  <div class="milestone-item">
+    <span>🛠️</span>
+    <div class="ms-info">
+      <div class="ms-title">Dark mode contrast too low on charts</div>
+      <div class="ms-date">Reported by Sarah · 2 days ago</div>
+    </div>
+    <span class="in-days">In Progress</span>
+  </div>
+
+  <p style="color:#94a3b8; font-size:13px; margin-top:16px">
+    Found a bug or want to help debug? Jump in and contribute.
+  </p>
+</div>
+<!-- ================= QUICK TASK ================= -->
+<div class="detail-card tab-content" data-content="quicktask" hidden>
+
+  <div class="card-head">
+    <h3>Quick Tasks</h3>
+    <span style="font-size:12px;color:#94a3b8">
+      Short, one-time help requests
+    </span>
+  </div>
+
+  <!-- TASK 1 -->
+  <div class="milestone-item">
+    <span>⚡</span>
+    <div class="ms-info">
+      <div class="ms-title">Fix navbar alignment on mobile</div>
+      <div class="ms-date">Skill: CSS · Time: ~10 mins</div>
+    </div>
+    <span class="in-days">Open</span>
+  </div>
+
+  <!-- TASK 2 -->
+  <div class="milestone-item">
+    <span>🧩</span>
+    <div class="ms-info">
+      <div class="ms-title">Help with React useEffect bug</div>
+      <div class="ms-date">Skill: React · Time: ~15 mins</div>
+    </div>
+    <span class="in-weeks">Taken</span>
+  </div>
+
+  <!-- TASK 3 -->
+  <div class="milestone-item">
+    <span>🎨</span>
+    <div class="ms-info">
+      <div class="ms-title">Center hero text properly</div>
+      <div class="ms-date">Skill: UI / CSS · Time: ~5 mins</div>
+    </div>
+    <span style="color:#22c55e;font-size:12px;font-weight:600">
+      Done
+    </span>
+  </div>
+
+  <!-- CTA -->
+  <button class="small-btn" style="margin-top:16px">
+    join Quick Task
+  </button>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<script src="project-details.js"></script>
+</body>
+</html>

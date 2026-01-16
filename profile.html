@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Jake Nolan — Connect</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body class="dark">
+    <div class="background-glow"></div>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="assets/logo-light.png" alt="Connect logo">
+    <span>Connect</span>
+  </div>
+
+  <nav>
+    <a href ="project.html">Project</a>
+    <a href="index.html">Home</a>
+    <a href="hub.html">Hub</a>
+    <a href="store.html">Store</a>
+    <a href="tutorial.html">How it works</a>
+
+    <div class="theme-switch" id="themeToggle">
+      <div class="switch-circle"></div>
+    </div>
+
+    <a href="profile.html" class="nav-profile">
+      <img src="assets/me.png" alt="My profile">
+    </a>
+  </nav>
+</header>
+
+
+<div class="page-container">
+
+  <aside class="left-sidebar">
+    <div class="profile-avatar-wrap">
+      <img src="assets/me.png" alt="Jake Nolan" class="avatar-img">
+      <div class="status-badge">⚡</div>
+    </div>
+
+    <h1 class="profile-name-large">Tarrun B</h1>
+    <p class="profile-role">Founder · Developer</p>
+
+    <div class="profile-stats">
+      <div class="stat-item">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">320</span>
+        <span class="stat-label">Followers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">145</span>
+        <span class="stat-label">Following</span>
+      </div>
+    </div>
+
+    <div class="profile-meta-list">
+      <div class="meta-row">
+        <span>📍</span> Austin, TX
+      </div>
+      
+      <a href="#" class="meta-row">
+        <span>🔗</span> jakenolan.dev
+      </a>
+
+      <div style="display:flex; gap:16px; margin-top:8px; justify-content:center;">
+         <a href="https://twitter.com" target="_blank" style="text-decoration:none; font-size:18px">🐦</a>
+         <a href="https://linkedin.com" target="_blank" style="text-decoration:none; font-size:18px">💼</a>
+         <a href="https://instagram.com" target="_blank" style="text-decoration:none; font-size:18px">📸</a>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="btn btn-primary">
+        <span>⭐</span> Follow
+      </button>
+      <button class="btn btn-ghost">
+        Message
+      </button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    
+    <div class="content-header">
+      <h2>Tarrun B <span class="user-badge">⭐ 420</span></h2>
+      <p style="color:#64748b; margin-bottom:12px; font-size:14px">Joined April 2022</p>
+      <p class="bio-text">
+        Welcome to my space! Currently leading <strong>StreakSync</strong>, a habit tracker for developers. 
+        Passionate about coding streaks and improving productivity. Feel free to DM me if interested in building cool stuff together.
+      </p>
+    </div>
+
+    <nav class="profile-tabs">
+      <div class="tab-item active" data-target="overview">Overview</div>
+      <div class="tab-item" data-target="projects">Projects</div>
+      <div class="tab-item" data-target="discussions">Discussions</div>
+      <div class="tab-item" data-target="streaks">Streaks</div>
+      <div class="tab-item" data-target="activity">Activity</div>
+    </nav>
+
+    <div id="overview" class="profile-section glass-card tab-content active" data-section="overview">
+      <h3>About</h3>
+      <p style="margin-bottom: 12px; color: var(--text-muted); line-height: 1.6;">
+        Founder & developer building productivity tools for developers. Currently
+        leading <strong>StreakSync</strong>, a habit tracker focused on sustainable coding streaks
+        and deep-work sessions.
+      </p>
+
+      <p style="margin-bottom: 24px; color: var(--text-muted); line-height: 1.6;">
+        Passionate about clean UI, developer experience, and systems that help
+        people stay consistent without burnout.
+      </p>
+
+      <div class="overview-stats">
+        <div class="stat-box">
+          <span class="stat-value">742</span>
+          <span class="stat-label">Day Streak</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">18</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value">1.2k</span>
+          <span class="stat-label">Followers</span>
+        </div>
+      </div>
+    </div>
+
+  <div id="projects" class="profile-section tab-content" data-section="projects" style="display:none">
+      
+      <a href="project-detail.html" class="glass-card project-card-link" style="text-decoration: none; display: block; color: inherit;">
+        <div class="card-top">
+          <div class="card-title">
+            <span style="font-size:24px">💡</span>
+            <div>
+              <span style="color: white; font-weight: 600; font-size: 1.1rem;">Habit Tracker for Developers</span>
+              <div style="font-size:13px; font-weight:400; color:#94a3b8; margin-top:2px">
+                Gamifying productivity by tracking coding streaks.
+              </div>
+            </div>
+          </div>
+          <span class="stage-badge">MVP Stage</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 44%"></div>
+        </div>
+        <div class="progress-text">44% Complete</div>
+
+        <div class="tech-stack">
+          <span class="tech-tag"><i style="background:#3178c6"></i> TypeScript</span>
+          <span class="tech-tag"><i style="background:#61dafb"></i> React Native</span>
+          <span class="tech-tag"><i style="background:#ffcb2b"></i> Firebase</span>
+        </div>
+
+        <div style="margin-top:16px; font-size:13px; color:#cbd5e1; display:flex; gap:16px">
+          <span>⭐ 52 Stars</span>
+          <span>👥 320 Followers</span>
+        </div>
+      </a>
+
+      <div style="margin:24px 0 16px; font-weight:600; font-size:18px">Open Source Contributions</div>
+
+      <div class="glass-card" style="padding:16px 24px">
+        <div class="list-row">
+          <div class="list-info">
+            <h4>⚡ Supabase.io</h4>
+            <span style="color:#94a3b8; font-size:13px">Open source Firebase alternative</span>
+          </div>
+          <div class="repo-stats">
+             <span>❤️ 52</span>
+             <span>🍴 25</span>
+          </div>
+        </div>
+
+        <div class="list-row">
+          <div class="list-info">
+            <h4>🔥 StreakWave.js</h4>
+            <span style="color:#94a3b8; font-size:13px">Tiny JS library for heatmaps</span>
+          </div>
+          <div class="repo-stats">
+             <span>❤️ 80</span>
+             <span>⭐ 120</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="discussions" class="profile-section glass-card tab-content" data-section="discussions" style="display:none">
+      <h3>Recent Discussions</h3>
+
+      <div class="discussion-row">
+        <p class="disc-title">Should streaks reset after a missed day?</p>
+        <span class="disc-meta">12 replies · 2 days ago</span>
+      </div>
+
+      <div class="discussion-row">
+        <p class="disc-title">Daily vs weekly goals for developers</p>
+        <span class="disc-meta">8 replies · 4 days ago</span>
+      </div>
+
+      <div class="discussion-row">
+        <p class="disc-title">How do you avoid burnout while shipping fast?</p>
+        <span class="disc-meta">21 replies · 1 week ago</span>
+      </div>
+    </div>
+
+    <div id="streaks" class="profile-section glass-card tab-content" data-section="streaks" style="display:none">
+      <h3>Streaks</h3>
+
+      <div class="streak-row">
+        <span>🔥 Coding Streak</span>
+        <strong>742 days</strong>
+      </div>
+
+      <div class="streak-row">
+        <span>📘 Learning Streak</span>
+        <strong>181 days</strong>
+      </div>
+
+      <div class="streak-row">
+        <span>✍️ Writing / Docs</span>
+        <strong>96 days</strong>
+      </div>
+
+      <p class="streak-note">
+        Streaks are based on consistent daily activity — not raw hours.
+      </p>
+    </div>
+
+    <div id="activity" class="profile-section glass-card tab-content" data-section="activity" style="display:none">
+      <h3>Recent Activity</h3>
+
+      <div class="activity-item">
+        🚀 Pushed updates to <strong>StreakSync</strong>
+        <span>· 2 hours ago</span>
+      </div>
+
+      <div class="activity-item">
+        💬 Replied to discussion “Weekly vs Daily streaks”
+        <span>· Yesterday</span>
+      </div>
+
+      <div class="activity-item">
+        ⭐ Starred <strong>Supabase</strong>
+        <span>· 2 days ago</span>
+      </div>
+
+      <div class="activity-item">
+        🛠️ Fixed UI contrast issue in dark mode
+        <span>· 3 days ago</span>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="glass-card">
+      <div class="section-label">Skills</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Full-Stack</span>
+        <span class="skill-pill">React Native</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Gamification</span>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <div class="section-label">Availability</div>
+      <div class="availability-card">
+        <div style="width:8px; height:8px; background:#22c55e; border-radius:50%"></div>
+        Up for interesting collabs
+      </div>
+      
+      <div style="margin-top:20px">
+        <div class="section-label">Contact</div>
+        <div class="contact-email">
+          ✉️ jake@streaksync.com
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

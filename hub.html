@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Connect | Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hubstyle.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER --><!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="assets/logo-light.png" alt="Connect logo">
+    <span>Connect</span>
+  </div>
+
+  <nav>
+    <a href ="project.html">Project</a>
+    <a href="index.html">Home</a>
+    <a href="hub.html">Hub</a>
+    <a href="store.html">Store</a>
+    <a href="tutorial.html">How it works</a>
+
+
+    <!-- Theme Toggle -->
+    <div class="theme-switch" id="themeToggle">
+      <div class="switch-circle"></div>
+    </div>
+    <a href="profile.html" class="nav-profile">
+  <img src="assets/me.png" alt="My profile">
+</a>
+
+  </nav>
+</header>
+<div class="hub-glow"></div>
+
+
+
+<header class="app-header">
+  
+ <h1 class="header-title hub-title">
+  Hub
+  <img src="assets/image.png" alt="Hub icon" class="hub-icon">
+  
+</h1>
+  <p class="hub-subtitle">
+  A place where ideas are shared, questions are answered, and projects grow through collaboration.
+</p>
+
+<div class="hub-search">
+  <span class="search-icon">🔍</span>
+
+  <input type="text" placeholder="Search discussions..." />
+
+  <!-- CATEGORY DROPDOWN -->
+  <div class="category-wrapper">
+    <button class="category-btn" id="categoryToggle">
+      <span id="activeCategory">All</span>
+      <span class="arrow">▾</span>
+    </button>
+
+    <div class="category-menu" id="categoryMenu">
+      <div class="category-option">All</div>
+      <div class="category-option">Design</div>
+      <div class="category-option">Technology</div>
+      <div class="category-option">Startups</div>
+      <div class="category-option">Marketing</div>
+      <div class="category-option">AI</div>
+      <div class="category-option">Growth</div>
+    </div>
+  </div>
+</div>
+
+</header>
+
+<!-- FILTERS -->
+<div class="filters-wrap">
+ <div class="pill-row">
+  <button class="pill active">All</button>
+  <button class="pill">Discussion</button>
+  <button class="pill">Question</button>
+  <button class="pill">Help Request</button>
+  <button class="pill">Feedback</button>
+  <button class="pill">Collaboration</button>
+  <button class="pill">Project Update</button>
+</div>
+
+
+  <div class="filters-right">
+    Sort by
+    <select>
+      <option>Top</option>
+      <option>Latest</option>
+      <option>Most Replies</option>
+    </select>
+  </div>
+</div>
+
+
+
+<!-- MAIN -->
+<section class="page-width main">
+
+  <!-- LEFT : DISCUSSIONS -->
+  <div>
+
+    <!-- DISCUSSION 1 -->
+<a href="comm.html" class="card-link">
+  <div class="card">
+    <div class="post-head">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/men/69.jpg">
+      </div>
+      <div>
+        <div class="username">Best tools for prototyping?</div>
+        <div class="time">Design · ⭐ 310 · 6h ago</div>
+      </div>
+    </div>
+    <p>What are your go-to tools for prototyping app ideas?</p>
+  </div>
+</a>
+    <!-- DISCUSSION 2 -->
+<a href="comm2.html" class="card-link">
+  <div class="card">
+    <div class="post-head">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg">
+      </div>
+      <div>
+        <div class="username">How to scale a SaaS product?</div>
+        <div class="time">Technology · ⭐ 310 · 6h ago</div>
+      </div>
+    </div>
+    <p>
+      We’re preparing to scale our SaaS. What worked for you when growing from
+      100 to 10k users?
+    </p>
+  </div>
+</a>
+
+    <!-- DISCUSSION 3 -->
+    <a href="comm.html" class="card-link">
+  <div class="card">
+    <div class="post-head">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg">
+      </div>
+      <div>
+        <div class="username">Best UI libraries for React?</div>
+        <div class="time">UI/UX · ⭐ 180 · 1d ago</div>
+      </div>
+    </div>
+    <p>
+      Which React UI libraries help you ship faster without sacrificing design
+      quality?
+    </p>
+  </div>
+</a>
+
+
+    <!-- DISCUSSION 4 -->
+    <a href="comm.html" class="card-link">
+  <div class="card">
+    <div class="post-head">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg">
+      </div>
+      <div>
+        <div class="username">How do you validate startup ideas?</div>
+        <div class="time">Startups · ⭐ 220 · 1d ago</div>
+      </div>
+    </div>
+    <p>
+      Before building, how do you validate whether an idea is worth pursuing?
+      Interviews, landing pages, or MVPs?
+    </p>
+  </div>
+</a>
+
+
+    <!-- DISCUSSION 5 -->
+  <a href="comm.html" class="card-link">
+  <div class="card">
+    <div class="post-head">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/women/25.jpg">
+      </div>
+      <div>
+        <div class="username">Weekly standup tips for remote teams</div>
+        <div class="time">Collaboration · ⭐ 140 · 2d ago</div>
+      </div>
+    </div>
+    <p>
+      What practices make weekly standups effective when your team is fully
+      remote?
+    </p>
+  </div>
+</a>
+<!-- COLLABORATION DISCUSSION -->
+<a href="comm3.html" class="card-link">
+  <div class="card">
+    <div class="post-head">
+      <div class="avatar">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      </div>
+      <div>
+        <div class="username">
+          Looking for a UI Designer
+         
+        </div>
+        <div class="time">
+          Design · Startup · 6 replies · 5h ago
+        </div>
+      </div>
+    </div>
+
+    <p>
+      Building an early-stage fintech product and looking for a UI/UX designer
+      to collaborate on dashboards and core flows.
+    </p>
+  </div>
+</a>
+
+
+  </div>
+
+  <!-- RIGHT : SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="card">
+      <h4>Trending Topics</h4>
+      <div class="topic">#UI/UX Design</div>
+      <div class="topic">#Remote Work</div>
+      <div class="topic">#AI Tools</div>
+      <div class="topic">#Funding Tips</div>
+    </div>
+
+    <div class="card">
+      <h4>Top Contributors</h4>
+      <div class="topic">Alex Johnson</div>
+      <div class="topic">Sarah Lee</div>
+      <div class="topic">Mark Tan</div>
+    </div>
+
+  </div>
+
+</section>
+<script src="hubapp.js"></script>
+</body>
+</html>

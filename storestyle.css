@@ -1,0 +1,588 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #020617;
+  --accent-blue: #3b82f6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", sans-serif;
+  transition: background 0.4s, color 0.4s;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body.light { background: var(--bg-light); color: #0f172a; }
+body.dark { background: var(--bg-dark); color: #f8fafc; }
+
+/* --- NAVBAR (Defined from page) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed; /* Fixed so it stays during scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark .navbar {
+  background: rgba(15, 23, 42, 0.9); /* Slightly lighter than deep dark bg */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.4rem; }
+.logo img { width: 32px; }
+
+/* --- NAV HOVER EFFECTS --- */
+nav { display: flex; align-items: center; gap: 20px; }
+nav a { 
+  text-decoration: none; 
+  color: inherit; 
+  font-weight: 500; 
+  opacity: 0.7; 
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+
+
+nav a.active { opacity: 1; border-bottom: 2px solid var(--accent-blue); }
+
+/* THEME SWITCH */
+.theme-switch { width: 50px; height: 26px; background: #cbd5e1; border-radius: 20px; position: relative; cursor: pointer; }
+.switch-circle { width: 20px; height: 20px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: 0.3s ease; }
+body.dark .theme-switch { background: #334155; }
+body.dark .switch-circle { transform: translateX(24px); }
+
+/* HERO SECTION & GLOW */
+.hero { position: relative; padding-top: 120px; padding-bottom: 80px; display: flex; flex-direction: column; align-items: center; }
+.hero-glow {
+  position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.08), transparent 45%),
+              radial-gradient(circle at 70% 50%, rgba(124, 58, 237, 0.05), transparent 50%);
+}
+
+/* STORE HEADER */
+.store-top-section { text-align: center; width: 100%; max-width: 900px; margin-bottom: 50px; padding: 0 20px; }
+.store-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; }
+.store-subtitle { opacity: 0.6; font-size: 1.1rem; margin-bottom: 30px; }
+
+/* --- SEARCH BAR (Single Icon at End) --- */
+.store-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 50px 14px 25px; /* Added right padding for icon */
+  border-radius: 40px;
+  border: 1px solid rgba(0,0,0,0.1);
+  outline: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+  
+  /* The Icon */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat !important; /* Fixed the tiling issue */
+  background-position: right 20px center;
+  background-size: 18px;
+}
+
+body.dark .store-search { 
+  background-color: #1e293b; 
+  color: white; 
+  border-color: #334155; 
+}
+
+/* FILTERS */
+.filter-controls { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.filter-group { display: flex; gap: 10px; }
+.pill { padding: 10px 22px; border-radius: 30px; border: 1px solid rgba(0,0,0,0.1); background: white; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.pill:hover { transform: translateY(-2px); }
+.pill.selected { background: var(--accent-blue) !important; color: white !important; border-color: var(--accent-blue) !important; box-shadow: 0 5px 15px rgba(59,130,246,0.3); }
+
+body.dark .pill { background: #1e293b; color: white; border-color: #334155; }
+.price-select { padding: 10px 15px; border-radius: 30px; border: 1px solid rgba(0,0,0,0.1); background: white; font-weight: 600; outline: none; }
+body.dark .price-select { background: #1e293b; color: white; border-color: #334155; }
+
+/* POLAROID GRID */
+.polaroid-board { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; width: 100%; max-width: 1300px; }
+
+.polaroid {
+  width: 285px; padding: 15px 15px 65px 15px; 
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent;
+  position: relative;
+}
+
+.feature-card {
+  background: #f1f5f9;
+  border-radius: 8px; padding: 20px; height: 320px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+
+/* DARK MODE POLAROID: BLACK OUTSIDE, GREY INSIDE */
+body.dark .polaroid { background-color: #334155 !important; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); }
+body.dark .feature-card { background-color: #6b7f9b !important; border: 1px solid #475569; }
+
+/* SELECTION & HOVER */
+.polaroid:hover { transform: translateY(-8px); }
+.polaroid.selected { border-color: var(--accent-blue) !important; box-shadow: 0 0 25px rgba(59,130,246,0.4); transform: translateY(-8px); }
+
+/* CONTENT STYLES */
+.card-icon { width: 75px; height: 75px; border-radius: 12px; margin-bottom: 15px; }
+.details h4 { font-size: 1.1rem; margin-bottom: 5px; }
+.tag { font-size: 0.7rem; background: #e0e7ff; color: #4338ca; padding: 3px 8px; border-radius: 4px; font-weight: 700; text-transform: uppercase; }
+.details p { font-size: 0.85rem; margin: 15px 0; opacity: 0.8; line-height: 1.4; }
+.price-row { margin-top: auto; display: flex; width: 100%; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.05); }
+body.dark .price-row { border-color: rgba(255,255,255,0.1); }
+
+.btn-buy { background: var(--accent-blue); color: white; border: none; padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+.btn-demo { background: #e2e8f0; color: #475569; border: none; padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+
+figcaption { font-family: 'Caveat', cursive; font-size: 1.6rem; text-align: center; margin-top: 15px; color: #1e293b; }
+body.dark figcaption { color: #f8fafc; }
+
+/* REMOVE TAPE COMPLETELY */
+.polaroid::before, .polaroid::after {
+  display: none !important;
+  content: none !important;
+}
+/* This part handles the hover for both modes */
+
+nav a:hover {
+  opacity: 1;
+  /* Changes text to Blue on hover */
+  background: rgba(59, 130, 246, 0.1); /* Adds a faint blue tint */
+  /* Slightly higher lift */
+}
+
+body.dark nav a:hover {
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adds a shadow lift */
+}
+/* ================= NAVBAR CONTAINER ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+/* 🌞 Light mode – subtle separation */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+/* 🌙 Dark mode – subtle lift */
+body.dark .navbar {
+  background: rgba(2, 6, 23, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= NAV LINKS & HOVER ================= */
+nav a {
+  margin-right: 22px;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  opacity: 1;
+  background: rgba(148, 163, 184, 0.15); /* Light grey pill on hover */
+  transform: translateY(-2px);         /* The "lil lift" */
+}
+
+body.dark nav a:hover {
+  background: rgba(255, 255, 255, 0.1); /* Subtle white glow in dark mode */
+  color: var(--accent-blue, #3b82f6);    /* Adds a blue tint if you have the variable */
+}
+/* ================= UNIFIED NAVBAR & BUTTONS ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+/* Theme-specific Navbar Backgrounds */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+body.dark .navbar {
+  background: rgba(2, 6, 23, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* --- NAV LINKS PLACEMENT --- */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 22px; /* Fixed spacing between links */
+  padding: 8px 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  opacity: 1;
+  background: rgba(148, 163, 184, 0.15); /* Light Mode hover pill */
+  transform: translateY(-2px);
+}
+
+body.dark nav a:hover {
+  background: rgba(255, 255, 255, 0.08); /* Dark Mode hover pill */
+}
+
+/* --- THEME TOGGLE BUTTON (56px Landing Page Version) --- */
+.theme-switch {
+  width: 56px;  /* Matches Landing Page exactly */
+  height: 28px;
+  background: #cbd5f5;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents button from squishing */
+}
+
+.switch-circle {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.dark .theme-switch {
+  background: linear-gradient(
+    90deg,
+    rgba(148,163,184,0.45),
+    rgba(99,102,241,0.35)
+  );
+}
+
+body.dark .switch-circle {
+  transform: translateX(28px); /* Matches the 56px width perfectly */
+}
+/* --- UNIFIED NAVBAR CONTAINER --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px; /* Exact padding from Landing Page */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+body.dark .navbar {
+  background: rgba(2, 6, 23, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* --- NAV LINKS & "LIL LIFT" HOVER --- */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 22px; 
+  padding: 8px 14px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* The Hover Effect from Landing Page */
+nav a:hover {
+  opacity: 1;
+  background: rgba(148, 163, 184, 0.15);
+  transform: translateY(-2px); /* The lil lift */
+}
+
+body.dark nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active state for the Store page link */
+nav a.active {
+  opacity: 1;
+  background: rgba(59, 130, 246, 0.15); /* Light blue tint */
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* --- THEME SWITCH (56px width) --- */
+.theme-switch {
+  width: 56px; 
+  height: 28px;
+  background: #cbd5f5;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.switch-circle {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+body.dark .theme-switch {
+  background: linear-gradient(90deg, rgba(148,163,184,0.45), rgba(99,102,241,0.35));
+}
+
+body.dark .switch-circle {
+  transform: translateX(28px); /* Matches 56px width */
+}
+/* --- TIGHTENED NAV LINKS --- */
+nav a {
+  margin-right: 8px;   /* Reduced from 22px to bring them closer */
+  padding: 8px 10px;   /* Slightly tighter padding */
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  opacity: 1;
+  background: rgba(148, 163, 184, 0.15);
+  transform: translateY(-2px); /* Matches the Landing Page lift */
+}
+
+body.dark nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* --- STORE TITLE ICON ADJUSTMENT --- */
+.store-title {
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center; /* Keeps them centered initially */
+  justify-content: center;
+  gap: 15px; 
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.title-icon {
+  width: 45px; /* Slightly smaller often looks better aligned */
+  height: auto;
+  
+  /* THE FIX: Move it higher */
+  /* Negative value moves it UP. Adjust -5px to -10px as needed */
+  transform: translateY(-4px); 
+  
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+/* ================= UNIFIED NAVBAR CONTAINER ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px; /* Exact padding from Landing Page */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+/* Theme-specific Navbar Backgrounds */
+body.light .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+body.dark .navbar {
+  background: rgba(2, 6, 23, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= NAV LINKS (Tightened & Lifted) ================= */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 8px;   /* Tightened gap */
+  padding: 8px 10px;   /* Adjusted padding */
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex; /* Keeps text and icon aligned */
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+/* Hover Effect: Lil Lift */
+nav a:hover {
+  opacity: 1;
+  background: rgba(148, 163, 184, 0.15);
+  transform: translateY(-2px);
+}
+
+body.dark nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active Link Style */
+nav a.active {
+  opacity: 1;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* ================= THEME SWITCH (56px Version) ================= */
+.theme-switch {
+  width: 56px; 
+  height: 28px;
+  background: #cbd5f5;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 10px; /* Small separation from links */
+}
+
+.switch-circle {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.dark .theme-switch {
+  background: linear-gradient(90deg, rgba(148,163,184,0.45), rgba(99,102,241,0.35));
+}
+
+body.dark .switch-circle {
+  transform: translateX(28px);
+}
+
+/* ================= STORE TITLE ADJUSTMENT ================= */
+.store-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.title-icon {
+  width: 45px; /* Sized to match text */
+  height: auto;
+  transform: translateY(-4px); /* Moves icon up slightly to align visually */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.title-icon:hover {
+  transform: translateY(-4px) scale(1.1); /* Subtle grow on hover */
+  transition: transform 0.3s ease;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(59,130,246,0.25), transparent 40%),
+    radial-gradient(circle at 70% 40%, rgba(34,197,94,0.2), transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(139,92,246,0.2), transparent 45%);
+  z-index: 0;
+}
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+    rgba(59,130,246,0.25),
+    rgba(34,197,94,0.15),
+    transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.hero::before {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
